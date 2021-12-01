@@ -8,32 +8,32 @@ export default function LandingData() {
 
   return (
     <Flex w='100%' direction={isWideVersion ? 'row' : 'column'}>
-      <Text fontWeight='400' fontSize='14' color='gray.600'>
+      <Text textAlign={isWideVersion ? 'left' : 'center'} maxW={isWideVersion ? '45%' : '100%'} fontWeight='400' fontSize='24' color='gray.600'>
         {continent.description}
       </Text>
 
       <Flex mt='4' justifyContent={['space-between', 'space-around']} w='100%'>
         <Flex p='0 4px' direction='column' textAlign={isWideVersion ? 'center' : 'start'}>
-          <Text fontWeight='600' fontSize='24' color='yellow.400'>
+          <Text fontWeight='600' fontSize='32' color='yellow.400'>
             {continent.counts.countries}
           </Text>
-          <Text fontWeight='400' fontSize='18' color='gray.600'>
+          <Text fontWeight='400' fontSize='24' color='gray.600'>
             países
           </Text>
         </Flex>
         <Flex direction='column' textAlign={isWideVersion ? 'center' : 'start'}>
-          <Text fontWeight='600' fontSize='24' color='yellow.400'>
+          <Text fontWeight='600' fontSize='32' color='yellow.400'>
             {continent.counts.languages}
           </Text>
-          <Text fontWeight='400' fontSize='18' color='gray.600'>
+          <Text fontWeight='400' fontSize='24' color='gray.600'>
             línguas
           </Text>
         </Flex>
         <Flex direction='column' textAlign={isWideVersion ? 'center' : 'start'}>
-          <Text fontWeight='600' fontSize='24' color='yellow.400'>
+          <Text fontWeight='600' fontSize='32' color='yellow.400'>
             {continent.counts.denseCities}
           </Text>
-          <Text fontWeight='400' fontSize='18' color='gray.600'>
+          <Text fontWeight='400' fontSize='24' color='gray.600'>
             cidades +100
           </Text>
         </Flex>

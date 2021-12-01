@@ -25,7 +25,7 @@ export default function ContinentPage({ continent, imagePackBaseUrl }: Continent
       <ContinentContextWrapper continent={continent} >
         <Banner backgroundImageSrc={`${imagePackBaseUrl}/landing.png`} />
 
-        <Box px='4' py='6'>
+        <Box maxW='1480px' w='100%' m='0 auto' px={isWideVersion ? '16' : '6'} py={isWideVersion ? '24' : '12'}>
           <LandingData />
 
           <DenseCities imagePackBaseUrl={imagePackBaseUrl} />
