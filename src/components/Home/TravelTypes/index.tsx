@@ -1,13 +1,9 @@
 import { Grid, Flex } from '@chakra-ui/react';
 import { TravelType } from './TravelType';
 
-interface TravelTypesProps {
-  isWideVersion?: boolean;
-}
-
-export const TravelTypes: React.FC<TravelTypesProps> = ({ isWideVersion }) => {
+export const TravelTypes: React.FC = () => {
   return (
-    <Flex direction='column' align='center' >
+    <Flex direction='column' align='center'>
       <Grid
         mb='12'
         mt='8'
@@ -17,25 +13,21 @@ export const TravelTypes: React.FC<TravelTypesProps> = ({ isWideVersion }) => {
         w='100%'
       >
         <TravelType
-          isWideVersion={isWideVersion}
           label='vida noturna'
           imageSrc='images/cocktail.svg'
           imageAlt='Cocktail'
         />
         <TravelType
-          isWideVersion={isWideVersion}
           label='praia'
           imageSrc='images/surf.svg'
           imageAlt='Surf'
         />
         <TravelType
-          isWideVersion={isWideVersion}
           label='moderno'
           imageSrc='images/building.svg'
           imageAlt='Building'
         />
         <TravelType
-          isWideVersion={isWideVersion}
           label='clássico'
           imageSrc='images/museum.svg'
           imageAlt='Museum'
@@ -43,7 +35,6 @@ export const TravelTypes: React.FC<TravelTypesProps> = ({ isWideVersion }) => {
       </Grid>
 
       <TravelType
-        isWideVersion={isWideVersion}
         label='e mais...'
         imageSrc='images/earth.svg'
         imageAlt='Earth'

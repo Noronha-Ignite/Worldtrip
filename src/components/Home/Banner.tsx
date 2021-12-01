@@ -1,10 +1,9 @@
 import { Flex, Image, Box, Text } from '@chakra-ui/react';
+import { useWideVersion } from '../../hooks/useWideVersion';
 
-interface BannerProps {
-  isWideVersion?: boolean;
-}
+export const Banner: React.FC = () => {
+  const isWideVersion = useWideVersion();
 
-export const Banner: React.FC<BannerProps> = ({ isWideVersion }) => {
   return (
     <Flex position='relative' w='100%' px='5%' bgImage="url('/images/sky.png')">
       <Box w='100%' py='1.75rem'>

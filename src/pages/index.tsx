@@ -2,30 +2,27 @@ import 'swiper/css';
 import 'swiper/css/a11y';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {
-  Flex,
-  Box,
-  Text,
-  Divider,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Flex, Box, Text, Divider } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import { Header } from '../components/Header';
 import { Banner } from '../components/Home/Banner';
 import { TravelTypes } from '../components/Home/TravelTypes';
 import { ContinentSlider } from '../components/Home/ContinentSlider';
+import { useRouter } from 'next/router';
+import { Continent } from '../continents';
 
 const Home: NextPage = () => {
-  const isWideVersion = useBreakpointValue({
-    base: false,
-    lg: true,
-  });
+  const router = useRouter();
+
+  const handleGoToContinent = (continent: Continent) => {
+    router.push(`/continent/${continent.id}`)
+  };
 
   return (
     <Flex overflowX='hidden' direction='column' h='100vh'>
       <Header />
-      <Banner isWideVersion={ isWideVersion } />
-      <TravelTypes isWideVersion={ isWideVersion } />
+      <Banner />
+      <TravelTypes />
 
       <Box w='16' mx='auto'>
         <Divider mt='8' borderColor='gray.700' opacity='1' />
@@ -40,7 +37,7 @@ const Home: NextPage = () => {
         </Text>
       </Box>
 
-      <ContinentSlider onContinentClick={continent => console.log(continent)} />
+      <ContinentSlider onContinentClick={handleGoToContinent} />
     </Flex>
   );
 };

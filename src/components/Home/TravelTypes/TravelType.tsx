@@ -1,18 +1,19 @@
 import { Stack, Image, Box, Text } from '@chakra-ui/react';
+import { useWideVersion } from '../../../hooks/useWideVersion';
 
 interface TravelTypeProps {
-  isWideVersion?: boolean;
   imageSrc: string;
   label: string;
   imageAlt?: string;
 }
 
 export const TravelType: React.FC<TravelTypeProps> = ({
-  isWideVersion,
   label,
   imageSrc,
   imageAlt,
 }) => {
+  const isWideVersion = useWideVersion();
+
   return (
     <Stack
       alignItems='center'
