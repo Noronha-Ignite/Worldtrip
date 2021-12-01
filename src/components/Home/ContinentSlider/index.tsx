@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import { Flex, Text } from '@chakra-ui/react';
 import { A11y, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Continent, continents } from './continents';
+import { Continent, continents } from '../../../continents';
 
 interface ContinentSliderProps {
   onContinentClick?: (continent: Continent) => void;
@@ -21,7 +21,7 @@ export const ContinentSlider: React.FC<ContinentSliderProps> = ({ onContinentCli
         height={320}
       >
         {continents.map((continent) => (
-          <SwiperSlide key={continent.name}>
+          <SwiperSlide key={continent.id}>
             <Flex
               onClick={onContinentClick && (() => onContinentClick(continent))}
               cursor='pointer'
@@ -35,10 +35,10 @@ export const ContinentSlider: React.FC<ContinentSliderProps> = ({ onContinentCli
               alignItems='center'
             >
               <Text color='gray.50' fontWeight='700' fontSize='24'>
-                {continent.name}
+                {continent.label}
               </Text>
               <Text color='gray.50' fontWeight='700' fontSize='14'>
-                {continent.description}
+                {continent.shortDescription}
               </Text>
             </Flex>
           </SwiperSlide>
